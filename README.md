@@ -25,7 +25,7 @@ The `init-new-project` script will set up the local files you will need, and com
 
 #### Via Composer
 ```
-$ composer create-project pantheon-systems/example-drupal7-composer my-new-project-name
+$ composer create-project pantheon-systems/example-drupal7-circle-composer my-new-project-name
 ```
 
 The `composer create-project` will download the base files you need for your new project, then run the `init-new-project` script to set things up.  The results are committed to a local git repository.  You might wish to [push your repository up to GitHub](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
