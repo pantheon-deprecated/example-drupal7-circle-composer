@@ -1,0 +1,121 @@
+{
+    "name": "pantheon-systems/example-drupal7-circle-composer",
+    "description": "Template for creating a project to manage a Drupal site with Composer, and test with Circle CI.  Use `composer create-project` to make your own project, or, if you prefer to clone the git repository, run `composer install` followed by `bin/init-new-project` to replace this file and set up your starting project.",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.drupal-composer.org/"
+        },
+
+        {
+            "type": "package",
+            "package": {
+                "name": "pantheon-systems/drops-7",
+                "type": "drupal-core",
+                "version": "7.37",
+                "source": {
+                    "url": "https://github.com/pantheon-systems/drops-7.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "replace": {
+                    "drupal/drupal": "self.version",
+                    "drupal/aggregator": "self.version",
+                    "drupal/block": "self.version",
+                    "drupal/blog": "self.version",
+                    "drupal/book": "self.version",
+                    "drupal/color": "self.version",
+                    "drupal/comment": "self.version",
+                    "drupal/contact": "self.version",
+                    "drupal/translation": "self.version",
+                    "drupal/contextual": "self.version",
+                    "drupal/dashboard": "self.version",
+                    "drupal/dblog": "self.version",
+                    "drupal/field": "self.version",
+                    "drupal/field_sql_storage": "self.version",
+                    "drupal/field_ui": "self.version",
+                    "drupal/file": "self.version",
+                    "drupal/filter": "self.version",
+                    "drupal/forum": "self.version",
+                    "drupal/help": "self.version",
+                    "drupal/image": "self.version",
+                    "drupal/list": "self.version",
+                    "drupal/locale": "self.version",
+                    "drupal/menu": "self.version",
+                    "drupal/node": "self.version",
+                    "drupal/number": "self.version",
+                    "drupal/openid": "self.version",
+                    "drupal/options": "self.version",
+                    "drupal/overlay": "self.version",
+                    "drupal/path": "self.version",
+                    "drupal/php": "self.version",
+                    "drupal/poll": "self.version",
+                    "drupal/rdf": "self.version",
+                    "drupal/search": "self.version",
+                    "drupal/shortcut": "self.version",
+                    "drupal/statistics": "self.version",
+                    "drupal/syslog": "self.version",
+                    "drupal/system": "self.version",
+                    "drupal/taxonomy": "self.version",
+                    "drupal/simpletest": "self.version",
+                    "drupal/text": "self.version",
+                    "drupal/toolbar": "self.version",
+                    "drupal/tracker": "self.version",
+                    "drupal/trigger": "self.version",
+                    "drupal/update": "self.version",
+                    "drupal/user": "self.version",
+                    "drupal/bartik": "self.version",
+                    "drupal/garland": "self.version",
+                    "drupal/seven": "self.version",
+                    "drupal/stark": "self.version"
+                }
+            }
+        }
+    ],
+    "require": {
+        "davidbarratt/custom-installer": "dev-master",
+        "derhasi/composer-preserve-paths": "0.1.*",
+        "cweagans/composer-patches": "~1.0",
+        "drupal/composer_vendor": "7.1.*",
+
+        "pantheon-systems/drops-7": "7.*",
+        "drupal/admin_menu": "7.3.*",
+        "drupal/devel": "7.1.*",
+        "drupal/responsive_bartik": "7.1.*"
+    },
+    "require-dev": {
+        "pantheon-systems/circle-scripts": "*"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "./bin/init-new-project"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin/",
+        "vendor-dir": "drupal/sites/all/vendor"
+    },
+    "extra": {
+        "custom-installer": {
+            "drupal-module": "drupal/sites/all/modules/contrib/{$name}/",
+            "drupal-theme": "drupal/sites/all/themes/contrib/{$name}/",
+            "drupal-library": "drupal/sites/all/libraries/{$name}/",
+            "drupal-drush": "drupal/sites/all/drush/{$name}/",
+            "drupal-profile": "drupal/profiles/{$name}/",
+            "drupal-core": "drupal/"
+        },
+        "preserve-paths": [
+            "drupal/sites/all/modules/contrib",
+            "drupal/sites/all/modules/custom",
+            "drupal/sites/all/themes/contrib",
+            "drupal/sites/all/themes/custom",
+            "drupal/sites/all/libraries",
+            "drupal/sites/all/drush",
+            "drupal/sites/all/vendor",
+            "drupal/sites/default/settings.php",
+            "drupal/sites/default/files"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
