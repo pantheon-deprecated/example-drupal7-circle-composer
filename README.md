@@ -41,7 +41,7 @@ The folder 'scripts' contain some starting scripts that you may use to customize
 $ ./bin/local-test
 ```
 
-The `local-test` script will set up a local Drupal site, run it with the PHP built-in webserver, and then run the Behat test suite.  This is analagous to what happens on Travis on every commit.
+The `local-test` script will set up a local Drupal site, run it with the PHP built-in webserver, and then run the Behat test suite.  This is analagous to what happens on Circle on every commit.
 
 ## Repository Management
 
