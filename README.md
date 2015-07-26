@@ -34,6 +34,8 @@ The `composer create-project` will download the base files you need for your new
 
 Once you have created a new project, you will still need to do some customization steps to suit your  particular needs.  See the [circle-scripts README](https://github.com/pantheon-systems/circle-scripts) for instructions on how to do this.
 
+The folder 'scripts' contain some starting scripts that you may use to customize the environment you need for your tests.
+
 ## Testing Locally
 ```
 $ ./bin/local-test

@@ -1,0 +1,107 @@
+#!/bin/bash
+
+#
+# The general pattern used is that environment variables
+# should be set in the CI system to define any special
+# values needed to build and test.
+#
+# If there are reasonable defauts that can be used
+# in absence of a defined environment variable, these
+# should be committed to the project's repository in
+# this file.
+#
+# See below for the availale variables.
+#
+
+#
+# SITE_NAME
+#
+# If SITE_NAME is not defined, then DEFAULT_SITE_NAME
+# is used to set the site name in `drush site-install`.
+#
+# When installed for CI, the site will also have
+# "(Local|Travis|Circle) CI Test Site" appended to
+# the site name.
+#
+# The fallback value is empty.
+#
+DEFAULT_SITE_NAME=
+
+#
+# DBURL
+#
+# If DBURL is not defined, then DEFAULT_DBURL will
+# be used to define the site's database settings.
+#
+# If neither DBURL or DEFAULT_DBURL are defined, then
+# a fallback value appropriate to the environment
+# (Travis or Circle) will be used.
+#
+DEFAULT_DBURL=
+
+#
+# ACCOUNT
+#
+# If ACCOUNT is not defined, then DEFAULT_ACCOUNT
+# will be used to name the admin account in `drush site-install`.
+#
+# If neither ACCOUNT nor DEFAULT_ACCOUNT are defined,
+# then the fallback name "admin" will be used.
+#
+# Note that this account name is only used for the CI
+# test site; a different account name is used when deploying.
+#
+DEFAULT_ACCOUNT=
+
+#
+# PASSWORD
+#
+# If PASSWORD is not defined, then DEFAULT_PASSWORD
+# will be used to set the admin account's password in `drush site-install`.
+#
+# If neither PASSWORD nor DEFAULT_PASSWORD are defined,
+# then the fallback password will be "admin" (same as fallback account).
+#
+# Note that this password is only used for the CI
+# test site; a different password is used when deploying.
+#
+DEFAULT_PASSWORD=
+
+#
+# ALIAS
+#
+# If ALIAS is not defined, then DEFAULT_ALIAS
+# will be used to name a Drush alias pointing at the
+# site to test.  This value should match whatever is
+# in behat.yml if using the Drush driver.
+#
+# If neither ALIAS nor DEFAULT_ALIAS are defined,
+# then a fallback name of `@localtest` is used.
+#
+DEFAULT_ALIAS=
+
+#
+# URI
+#
+# If URI is not defined, then DEFAULT_URI
+# will be used to set the URI used when testing
+# the site.  Doing this is important when testing
+# sites using modules that depend on a working
+# URI.
+#
+# If neither URI nor DEFAULT_URI are defined, then
+# the fallback value "default" will be used.
+#
+DEFAULT_URI=
+
+#
+# PORT
+#
+# If PORT is not defined, then DEFAULT_PORT
+# will be used to select the port when running
+# the site using the PHP built-in webserver.
+#
+# If neither PORT nor DEFAULT_PORT are defined,
+# then the fallback value "8088" will be used.
+#
+PORT:-${DEFAULT_PORT
