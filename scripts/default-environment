@@ -104,4 +104,4 @@ DEFAULT_URI=
 # If neither PORT nor DEFAULT_PORT are defined,
 # then the fallback value "8088" will be used.
 #
-PORT:-${DEFAULT_PORT
+DEFAULT_PORT=
