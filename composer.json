@@ -11,8 +11,8 @@
             "type": "package",
             "package": {
                 "name": "pantheon-systems/drops-7",
-                "type": "drupal-core",
-                "version": "7.37",
+                "type": "drupal-root",
+                "version": "7.40",
                 "source": {
                     "url": "https://github.com/pantheon-systems/drops-7.git",
                     "type": "git",
@@ -73,7 +73,7 @@
         }
     ],
     "require": {
-        "davidbarratt/custom-installer": "dev-master",
+        "composer/installers": "^1.0.21",
         "derhasi/composer-preserve-paths": "0.1.*",
         "cweagans/composer-patches": "~1.0",
         "drupal/composer_vendor": "7.1.*",
@@ -96,13 +96,13 @@
         "vendor-dir": "drupal/sites/all/vendor"
     },
     "extra": {
-        "custom-installer": {
-            "drupal-module": "drupal/sites/all/modules/contrib/{$name}/",
-            "drupal-theme": "drupal/sites/all/themes/contrib/{$name}/",
-            "drupal-library": "drupal/sites/all/libraries/{$name}/",
-            "drupal-drush": "drupal/sites/all/drush/{$name}/",
-            "drupal-profile": "drupal/profiles/{$name}/",
-            "drupal-core": "drupal/"
+        "installer-paths": {
+            "drupal/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+            "drupal/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"],
+            "drupal/sites/all/drush/{$name}/": ["type:drupal-drush"],
+            "drupal/sites/all/libraries/{$name}/": ["type:drupal-library"],
+            "drupal/profiles/{$name}/": ["type:drupal-profile"],
+            "drupal/": ["type:drupal-root"]
         },
         "preserve-paths": [
             "drupal/sites/all/modules/contrib",
