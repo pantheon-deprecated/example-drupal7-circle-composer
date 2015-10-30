@@ -11,7 +11,7 @@
             "type": "package",
             "package": {
                 "name": "pantheon-systems/drops-7",
-                "type": "drupal-root",
+                "type": "drupal-core",
                 "version": "7.40",
                 "source": {
                     "url": "https://github.com/pantheon-systems/drops-7.git",
@@ -104,7 +104,7 @@
             "drupal/sites/all/drush/{$name}/": ["type:drupal-drush"],
             "drupal/sites/all/libraries/{$name}/": ["type:drupal-library"],
             "drupal/profiles/{$name}/": ["type:drupal-profile"],
-            "drupal/": ["type:drupal-root"]
+            "drupal/": ["type:drupal-core"]
         },
         "preserve-paths": [
             "drupal/sites/all/modules/contrib",
