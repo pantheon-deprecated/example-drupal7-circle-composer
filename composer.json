@@ -76,9 +76,11 @@
         "composer/installers": "^1.0.21",
         "derhasi/composer-preserve-paths": "0.1.*",
         "cweagans/composer-patches": "~1.0",
-        "drupal/composer_vendor": "7.1.*",
 
         "pantheon-systems/drops-7": "7.*",
+
+        "drupal/composer_vendor": "7.1.*",
+
         "drupal/admin_menu": "7.3.*",
         "drupal/devel": "7.1.*",
         "drupal/responsive_bartik": "7.1.*"
