@@ -1,0 +1,27 @@
+#
+# behat.yml file for testing with both Behat and the Drupal site running on
+# the local system.
+#
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+        - %paths.base%/common-features
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      files_path: './data-files'
+      base_url: http://localhost:/
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drush'
+      drupal:
+        drupal_root: '../drupal'
+      drush:
+        alias: '@localcitest'

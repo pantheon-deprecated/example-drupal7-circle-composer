@@ -1,0 +1,30 @@
+#
+# behat.yml file for testing with Behat running on CI, and
+# the webserver also running on CI.
+#
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+        # Uncomment the line below if you do not run the common features tests
+        # on the Pantheon site.  No point in running all of the tests in both
+        # locations, though, so be default these are disabled.
+        # - %paths.base%/common-features
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      files_path: './data-files'
+      base_url: http://localhost:/
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drush'
+      drupal:
+        drupal_root: '../drupal'
+      drush:
+        alias: '@localcitest'

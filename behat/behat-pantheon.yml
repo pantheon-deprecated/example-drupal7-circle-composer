@@ -1,0 +1,26 @@
+#
+# behat.yml file for testing with a Drupal site on Pantheon.
+#
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+        # - %paths.base%/installer-features
+        - %paths.base%/common-features
+        - %paths.base%/pantheon-features
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      files_path: './data-files'
+      base_url: http://dev-example-drupal7-circle-composer.pantheon.io/
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drush'
+      drush:
+        alias: '@pantheon-ci.example-drupal7-circle-composer.dev'
