@@ -66,17 +66,20 @@ Set up your project to be tested by Circle CI:
 
 Next, set up the environment variables used by the push-to-pantheon script:
 
-Variable Name | Value
-------------- | --------------------------------------------
-SITE_NAME     | The name of the site used in "Site Install"
-PSITE         | The name of the Pantheon site to push to
-PENV          | The Pantheon site environment to overwrite on each test
-PEMAIL        | The email used to log in to a Pantheon User with access to the site
-PPASS         | The password for the acount specified by PEMAIL
-CI_BOT_EMAIL  | The email address to use in the git commit attribution
-CI_BOT_NAME   | The name to use in the git commit attribution
+Variable Name      | Value
+------------------ | --------------------------------------------
+PEMAIL             | The email used to log in to a Pantheon User with access to the site
+PPASS              | The password for the acount specified by PEMAIL
+GITHUB_OAUTH_TOKEN | Authorization token to increase rate limit (RECOMMENDED)
+SITE_NAME          | The name of the site used in "Site Install" (OPTIONAL)
+PSITE              | The name of the Pantheon site to push to (OPTIONAL)
+PENV               | The Pantheon site environment to overwrite on each test (OPTIONAL)
+CI_BOT_EMAIL       | The email address to use in the git commit attribution (OPTIONAL)
+CI_BOT_NAME        | The name to use in the git commit attribution (OPTIONAL)
 
 Edit these in Project Settings > Environment Variables (https://circleci.com/gh/ORG/PROJECT/edit#env-vars).
+
+PSITE and PENV will be read from the behat/behat-pantheon.yml file, if it exists. The values from the Drush Driver's 'alias:' entry is parsed for this information.
 
 You also need to set up an ssh key, so that the push-to-pantheon script can commit changes to the Pantheon git repository.
 
