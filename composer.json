@@ -86,7 +86,9 @@
         "drupal/responsive_bartik": "7.1.*"
     },
     "require-dev": {
-        "pantheon-systems/circle-scripts": "*"
+        "drush-ops/behat-drush-endpoint": "*",
+        "drupal/drupal-driver": "dev-master",
+        "pantheon-systems/ci-scripts": "*"
     },
     "scripts": {
         "post-create-project-cmd": [
