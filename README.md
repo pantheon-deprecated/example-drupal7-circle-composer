@@ -37,7 +37,18 @@ Once you have created a new project, you will still need to do some customizatio
 
 The folder 'scripts' contain some starting scripts that you may use to customize the environment you need for your tests.  Define values for the variables given in default-environment to control the behavior of the test scripts. Add commands to the install-configuration script to set up default configuration for your test site.
 
-## Testing Locally
+## Testing
+
+There are four ways to test:
+
+- Locally, with both Behat and the Drupal sites running on the local machine.
+- Locally, with Behat running on the local machine, and the Drupal site on Pantheon.
+- On Circle CI, with both Behat and the Drupal site running on the Circle server.
+- On Circle CI, with Behat running on the Circle server, and the Drupal site on Pantheon.
+
+See the [README](behat/README.md) file in the Behat directory for details on where to put your tests, and how to configure behat-pantheon.yml for the Pantheon tests.
+
+#### Testing Locally
 ```
 $ ./bin/local-test
 ```
