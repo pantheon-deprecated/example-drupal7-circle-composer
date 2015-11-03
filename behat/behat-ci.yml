@@ -20,11 +20,11 @@ default:
       goutte: ~
       selenium2: ~
       files_path: './data-files'
-      base_url: http://localhost:/
+      base_url: http://localhost:8088/
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drush'
       drupal:
         drupal_root: '../drupal'
       drush:
-        alias: '@localcitest'
+        alias: '@localtest'
