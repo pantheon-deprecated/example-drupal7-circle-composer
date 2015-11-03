@@ -79,6 +79,7 @@
 
         "pantheon-systems/drops-7": "7.*",
 
+        "drush/drush": "8.*",
         "drupal/composer_vendor": "7.1.*",
 
         "drupal/admin_menu": "7.3.*",
