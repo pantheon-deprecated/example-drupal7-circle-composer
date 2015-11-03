@@ -6,16 +6,17 @@ machine:
 
 test:
   pre:
-    - bin/disable-php-email
-    - bin/install-drupal
-    - bin/start-webserver:
+    - for f in $(ls $HOME/$CIRCLE_PROJECT_REPONAME/bin) ; do ln -fs $HOME/$CIRCLE_PROJECT_REPONAME/bin/$f $HOME/bin ; done
+    - disable-php-email
+    - install-drupal
+    - start-webserver:
         background: true
-    - bin/wait-for-webserver
+    - wait-for-webserver
 
   override:
-    - cd behat; ../bin/behat --config=behat-ci.yml
-    - bin/push-to-pantheon
-    - cd behat; ../bin/behat --config=behat-pantheon.yml
+    - cd behat; behat --config=behat-ci.yml
+    - push-to-pantheon
+    - cd behat; behat --config=behat-pantheon.yml
 
   post:
-    - bin/stop-webserver
+    - stop-webserver
