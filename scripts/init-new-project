@@ -32,3 +32,14 @@ sed $INPLACE \
   -e "s#\(^[ \t]*base_url:\).*#\1 http://$ENV-$PROJECT_NAME.$BASE_DOMAIN#" \
   -e "s#\(^[ \t]*alias:\).*#\1 '@$ALIAS_GROUP.$PROJECT_NAME.$ENV'#" \
   $PROJECT_BASE_DIR/behat/behat-pantheon.yml
+
+# Rename @localtest to @$PROJECT_NAME
+sed $INPLACE \
+  -e "s#^DEFAULT_ALIAS=.*#DEFAULT_ALIAS=@$PROJECT_NAME#" \
+  $PROJECT_BASE_DIR/scripts/default-environment
+sed $INPLACE \
+  -e "s#\(^[ \t]*alias:\).*#\1 '@$PROJECT_NAME'#" \
+  $PROJECT_BASE_DIR/behat/behat-ci.yml
+sed $INPLACE \
+  -e "s#\(^[ \t]*alias:\).*#\1 '@$PROJECT_NAME'#" \
+  $PROJECT_BASE_DIR/behat/behat-local.yml
