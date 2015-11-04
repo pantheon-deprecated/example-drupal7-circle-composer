@@ -3,10 +3,11 @@ machine:
     version: 5.5.11
   hosts:
     localhost: 127.0.0.1
+  environment:
+    PATH: $HOME/$CIRCLE_PROJECT_REPONAME/bin:$PATH
 
 test:
   pre:
-    - export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/bin:$PATH
     - disable-php-email
     - install-drupal
     - start-webserver:
