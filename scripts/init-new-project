@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # This is run once after `composer create-project` to fix
 # up the behat-pantheon.yml file.
@@ -5,10 +7,10 @@
 
 # Use 'sed $INPLACE' for cross-platform 'sed -i'.
 OS="$(uname -s)"
-INPLACE="-i"
+INPLACE="-i.dist"
 if [ "$OS" == "Darwin" ]
 then
-  INPLACE="-i ''"
+  INPLACE="-i .dist"
 fi
 
 # Find the project base directory, where this script was executed from.
