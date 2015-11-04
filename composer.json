@@ -93,7 +93,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "./bin/init-new-project"
+            "./scripts/init-new-project"
         ]
     },
     "config": {
