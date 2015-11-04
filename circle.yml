@@ -6,7 +6,7 @@ machine:
 
 test:
   pre:
-    - for f in $(ls $HOME/$CIRCLE_PROJECT_REPONAME/bin) ; do ln -fs $HOME/$CIRCLE_PROJECT_REPONAME/bin/$f $HOME/bin ; done
+    - export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/bin:$PATH
     - disable-php-email
     - install-drupal
     - start-webserver:
