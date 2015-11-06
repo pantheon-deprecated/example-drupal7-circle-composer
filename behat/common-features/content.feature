@@ -40,9 +40,9 @@ Feature: Content
 #  @api
 #  Scenario: Create and view a node with fields
 #    Given I am viewing an "Article" content:
-#    | title | My article with fields! |
+#    | title | My article with fields  |
 #    | body  | A placeholder           |
-#    Then I should see the heading "My article with fields!"
+#    Then I should see the heading "My article with fields"
 #    And I should see the text "A placeholder"
 
   @api
