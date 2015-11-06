@@ -88,6 +88,7 @@
     },
     "require-dev": {
         "drush-ops/behat-drush-endpoint": "*",
+        "drupal/drupal-extension": "dev-master",
         "drupal/drupal-driver": "dev-master",
         "pantheon-systems/ci-scripts": "*"
     },
