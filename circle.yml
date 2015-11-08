@@ -5,6 +5,15 @@ machine:
     localhost: 127.0.0.1
   environment:
     PATH: $HOME/$CIRCLE_PROJECT_REPONAME/bin:$PATH
+    # You may set the variables below to customize the behavior of the
+    # test runner. See the README.md file for instructions on how to
+    # set the secret site credentials needed to authenticate against Pantheon.
+    # Variables set here are specific to the Circle CI environment; to set
+    # variable values that are used across all environments, edit the
+    # file scripts/default-environment.
+    # SITE_NAME: My Awesome Site
+    # CI_BOT_EMAIL: mybot@mydomain.com
+    # CI_BOT_NAME: My Bot
 
 test:
   pre:
@@ -15,9 +24,16 @@ test:
     - wait-for-webserver
 
   override:
+    # Do a quick smoke-test on the ci server, and if that works,
+    # then push the site to Pantheon, and run the Behat tests
+    # against your Drupal site on Pantheon.
     - cd behat; behat --config=behat-ci.yml
     - push-to-pantheon
     - cd behat; behat --config=behat-pantheon.yml
+    # If you want to run all tests on Circle, and do not want to use
+    # the Pantheon integration, remove the block above and uncomment
+    # the instruction below.
+    # - cd behat; behat --config=behat-local.yml
 
   post:
     - stop-webserver
