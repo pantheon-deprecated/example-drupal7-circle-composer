@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run any pre-install tasks, e.g. compiling sass files.
+
