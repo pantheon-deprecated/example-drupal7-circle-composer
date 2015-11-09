@@ -1,10 +1,10 @@
 ## About
 
-This project can be used to very quickly create a Drupal 7 site that is managed by Composer, and tested on every commit on Circle CI using Behat.  The Behat tests can also be executed locally with very little effort.  Optionally, you may set up to test your Drupal site on [Pantheon](https://pantheon.io).
+This project template will create a Drupal 7 site that is managed by Composer and is tested on every commit on Circle CI using Behat, with the Drupal site either running on Pantheon or the Circle server.  Only a few quick steps are required to set up either an entirely new site, or convert an existing site.
+
+Adding new tests to your project will also be very easy; just follow the example of the included tests.
 
 ## Getting Started
-
-Optionally, you may start off by [creating a new site on Pantheon](https://dashboard.pantheon.io/sites/create).  If you do not do this now, though, it will be created for you automatically the first time you run your tests on Pantheon.  Running your site remotely on Pantheon is completely optional; if you choose to do it, you should [sign up for a free Agency account](https://pantheon.io/agencies/pantheon-for-agencies) if you have not already done so.
 
 Before you begin, you should first [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
@@ -12,7 +12,7 @@ Once you have Composer on your system, create a new project:
 ```
 $ composer create-project pantheon-systems/example-drupal7-circle-composer put-your-site-name-here
 ```
-If you already have a Drupal 7 site running on Pantheon, you should use the same name for your project as you used for your Pantheon site.
+If you already have a Drupal 7 site running on Pantheon, you should use the same name for your project as you used for your Pantheon site. If you are starting fresh, and would like to test on Pantheon, you should [sign up for a free Agency account](https://pantheon.io/agencies/pantheon-for-agencies) if you have not already done so.
 
 ## Testing
 
